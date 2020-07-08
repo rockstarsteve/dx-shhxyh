@@ -2,8 +2,12 @@
     <div class="container">
         <div class="left">
             <img :src="logoImg" class="logo-img" alt="">
-            <img :src="bgImg" class="bg-img" alt="">
-            <card-show></card-show>
+            <customer-detail></customer-detail>
+            <div class="center-line-group">
+                <div class="center-line"></div>
+                <div class="center-line"></div>
+            </div>
+            <recommend-wealth class="recommend-wealth"></recommend-wealth>
         </div>
         <div class="right">
             <div class="right-head">
@@ -43,18 +47,18 @@
 </template>
 
 <script>
+  import CustomerDetail from './components/CustomerDetail'
+  import RecommendWealth from './components/RecommendWealth'
   import MenuList from './components/MenuList'
-  import CardShow from './components/CardShow'
 
   export default {
     name: "index",
     components: {
-      MenuList,CardShow
+      CustomerDetail, RecommendWealth, MenuList
     },
     data() {
       return {
         logoImg: require('assets/images/login/logo.png'),
-        bgImg: require('assets/images/main/bg-img.png'),
         callLogoImg: require('assets/images/main/call-logo.png'),
         currUserImg: require('assets/images/main/user.jpg'),
 
@@ -88,14 +92,22 @@
                 left: 70rem;
             }
 
-            .bg-img{
-                position: absolute;
-                right: 0;
-                bottom: 0;
-                width: 378rem;
-                height: 269rem;
+            .center-line {
+                width: 955rem;
+                border-bottom: 1rem dashed #D5D5D5;
             }
 
+            .center-line-group > .center-line:first-child {
+                margin-top: 40rem;
+            }
+
+            .center-line-group > .center-line:nth-child(2) {
+                margin-top: 5rem;
+            }
+
+            .recommend-wealth {
+                margin-top: 34rem;
+            }
         }
 
         .right {

@@ -4,3 +4,9 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'STSongti';
+  src: url("./STSongti-SC-Black.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
