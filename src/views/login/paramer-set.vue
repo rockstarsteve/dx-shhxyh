@@ -41,18 +41,25 @@
         logoBg: require('assets/images/login/login-bg.png'),
         paremerSet: require('assets/images/login/right.png'),
         localIp: '',
-        serveIp: ''
-
+        serveIp: '',
+        isPopupVisible: false
       }
     },
     methods: {
+      showPopup() {
+        this.isPopupVisible = true
+      },
+      closePopup() {
+        this.isPopupVisible = false
+      },
       goBack() {
         this.$router.go(-1)
       },
       submit(event) {
-        let formData = new FormData();
 
-        console.log("提交。。。", formData)
+        this.$toast("密码错误");
+
+        console.log("提交。。。")
       }
     }
   }
@@ -92,6 +99,7 @@
                 position: absolute;
                 right: 0;
                 bottom: 0;
+                z-index: -1;
             }
 
             .form-title {

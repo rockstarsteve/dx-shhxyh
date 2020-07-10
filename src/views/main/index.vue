@@ -14,7 +14,7 @@
                 <div class="head-right">
                     <img :src="currUserImg" class="curr-user" alt="">
                     <div class="curr-name">张仪</div>
-                    <button class="logout">退出</button>
+                    <button class="logout" @click="logout">退出</button>
                 </div>
             </div>
 
@@ -58,6 +58,11 @@
         callLogoImg: require('assets/images/main/call-logo.png'),
         currUserImg: require('assets/images/main/user.jpg'),
 
+      }
+    },
+    methods:{
+      logout(){
+        this.$router.push({path: '/login'})
       }
     }
   }

@@ -11,6 +11,11 @@ Vue.config.productionTip = false
 
 Vue.use(ElementUI);
 
+//挂载自己的模态框
+import Toast from '@/components/toast'
+Vue.use(Toast)
+
+
 new Vue({
   router,
   render: h => h(App)
